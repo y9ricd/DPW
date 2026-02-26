@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Halaman Utama</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            display: flex;
+            gap: 5%;
+            width: 100%;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #f4f4f4;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .sidebar ul {
+            list-style-type: none;
+        }
+        .sidebar li {
+            margin: 15px 0;
+        }
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px;
+            display: block;
+            background-color: #ddd;
+            border-radius: 3px;
+            text-align: center;
+        }
+        .sidebar a:hover {
+            background-color: #bbb;
+        }
+        .content {
+            width: 75%;
+        }
+        iframe {
+            width: 100%;
+            height: 500px;
+            border: 2px solid #333;
+            border-radius: 5px;
+        }
+        .skenario {
+            text-align: center;
+            margin-top: 20px;
+            font-style: italic;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Aplikasi Web Sederhana</h1>
+    
+    <div class="container">
+        
+        <div class="sidebar">
+            <h3>Menu</h3>
+            <ul>
+                <li><a href="1_1.html" target="utama">Latihan 1.1</a></li>
+                <li><a href="1_2.html" target="utama">Latihan 1.2</a></li>
+                <li><a href="1_3.html" target="utama">Latihan 1.3</a></li>
+                <li><a href="1_4.html" target="utama">Latihan 1.4</a></li>
+                <li><a href="1_5.html" target="utama">Latihan 1.5</a></li>
+                <li><a href="1_6.html" target="utama">Latihan 1.6</a></li>
+                <li><a href="1_7.html" target="utama">Latihan 1.7</a></li>
+                <li><a href="1_8.html" target="utama">Latihan 1.8</a></li>
+                <li><a href="1_9.html" target="utama">Latihan 1.9</a></li>
+                <li><a href="1_10.html" target="utama">Latihan 1.10</a></li>
+            </ul>
+        </div>
+        
+       
+        <div class="content">
+            <iframe src="1_1.html" name="utama"></iframe>
+        </div>
+    </div>
+    
+    <div class="skenario">
+        <p>Skenario: ketika link di klik akan mengubah halaman iframe sesuai target (href).</p>
+    </div>
+</body>
+</html>
