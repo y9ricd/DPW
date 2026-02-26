@@ -9,11 +9,7 @@ Project ini dibuat untuk latihan dan pembelajaran dasar-dasar web programming, t
 - Struktur folder HTML
 - Penggunaan Git & GitHub untuk version control
 
-## Fitur
-- Menyimpan file latihan HTML
-- Tracking perubahan dengan Git
-- Sinkronisasi ke GitHub
-
 1. Clone repository:
    ```bash
    git clone https://github.com/username/DPW.git
+
