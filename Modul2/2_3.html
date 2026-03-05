@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Latihan 2.3 - Form Data Diri</title>
+    <title>2.3 </title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -47,7 +47,6 @@
             background-color: #780000;
             color: white;
             border-radius: 5px;
-            text-decoration: none;
         }
         #content {
             padding: 30px 20px;
@@ -56,109 +55,89 @@
             flex-direction: column;
             align-items: center;
         }
-        form {
+        .form-wrapper {
             width: 100%;
-            max-width: 600px;
-            margin: 0 auto;
+            max-width: 900px;
             background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
-            border: 1px solid #ddd;
-        }
-        .form-group {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        label {
-            width: 150px;
-            font-weight: bold;
-            color: #333;
-            padding-top: 8px;
-        }
-        input, select, textarea {
-            flex: 1;
-            padding: 8px 12px;
-            border: 1px solid #ccc;
+            border: 2px solid #333;
+            padding: 20px;
             border-radius: 5px;
+        }
+        .form-wrapper fieldset {
+            border: 2px solid #333;
+            padding: 20px;
+            margin: 0;
+        }
+        .form-wrapper legend {
+            font-weight: bold;
+            font-size: 16px;
+            padding: 0 10px;
+            text-transform: uppercase;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table td {
+            padding: 6px 8px;
+            vertical-align: middle;
+        }
+        table td:first-child {
+            width: 220px;
+        }
+        input[type="text"],
+        input[type="tel"] {
+            width: 250px;
+            padding: 4px 6px;
+            border: 1px solid #999;
             font-size: 14px;
-            transition: border 0.3s ease;
         }
-        input:focus, select:focus, textarea:focus {
-            border-color: #780000;
-            outline: none;
-            box-shadow: 0 0 5px rgba(120,0,0,0.3);
-        }
-        input[type="radio"] {
-            flex: none;
-            width: auto;
-            margin-right: 5px;
-        }
-        .radio-group {
-            flex: 1;
-            display: flex;
-            gap: 20px;
-        }
-        .radio-group label {
-            width: auto;
-            font-weight: normal;
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            padding-top: 0;
+        select {
+            padding: 4px 6px;
+            border: 1px solid #999;
+            font-size: 14px;
+            background-color: white;
+            cursor: pointer;
         }
         textarea {
+            width: 400px;
+            padding: 4px 6px;
+            border: 1px solid #999;
+            font-size: 14px;
             resize: vertical;
-            min-height: 80px;
+            min-height: 70px;
+        }
+        input[type="file"] {
+            font-size: 14px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 4px;
+        }
+        .radio-inline, .checkbox-inline {
+            display: inline;
+            margin-right: 15px;
+            font-weight: normal;
         }
         .button-group {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            margin-top: 25px;
+            text-align: center;
+            margin-top: 15px;
         }
         input[type="submit"], input[type="reset"] {
-            width: auto;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            font-weight: bold;
+            padding: 6px 20px;
+            font-size: 14px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            flex: none;
+            margin: 0 5px;
+            border: 1px solid #999;
+            background-color: #f0f0f0;
         }
-        input[type="submit"] {
+        input[type="submit"]:hover {
             background-color: #780000;
             color: white;
         }
-        input[type="submit"]:hover {
-            background-color: #a00000;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(120,0,0,0.3);
-        }
-        input[type="reset"] {
+        input[type="reset"]:hover {
             background-color: #666;
             color: white;
-        }
-        input[type="reset"]:hover {
-            background-color: #888;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102,102,102,0.3);
-        }
-        .keterangan {
-            width: 100%;
-            max-width: 600px;
-            margin-top: 30px;
-            background-color: #fff3f3;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 5px solid #780000;
-        }
-        .keterangan p {
-            margin: 5px 0;
-            color: #333;
         }
         #footer {
             background-color: #940000;
@@ -167,40 +146,14 @@
             text-align: center;
             font-style: italic;
             margin-top: 30px;
-        }
-        /* Placeholder style */
-        ::placeholder {
-            color: #999;
-            font-style: italic;
-        }
-        /* Style untuk select */
-        select {
-            background-color: white;
-            cursor: pointer;
-        }
-        /* Responsive */
-        @media (max-width: 600px) {
-            .form-group {
-                flex-direction: column;
-                gap: 5px;
-            }
-            label {
-                width: 100%;
-            }
-            .radio-group {
-                flex-wrap: wrap;
-            }
-            #header {
-                flex-direction: column;
-                text-align: center;
-            }
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <div id="header">
-        <h1>Form Pendaftaran Kandidat Raja Ibelis</h1>
-        <img src="gambar/foto5.jpg" alt="Foto Pemandangan 5" width="130" height="130">
+        <h1>Form Pendaftaran Mahasiswa Baru</h1>
+        <img src="gambar/foto5.jpg" alt="Foto" width="130" height="130">
     </div>
 
     <div id="link">
@@ -211,75 +164,154 @@
     </div>
 
     <div id="content">
-        <form action="proses.php" method="POST">
-            <div class="form-group">
-                <label for="nim">NIM :</label>
-                <input type="text" id="nim" name="nim" placeholder="Masukkan NIM" required>
-            </div>
+        <div class="form-wrapper">
+            <form action="proses.php" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Form Pendaftaran Mahasiswa Baru</legend>
+                    <table>
+                        <tr>
+                            <td>Nama Lengkap</td>
+                            <td><input type="text" name="nama"></td>
+                        </tr>
+                        <tr>
+                            <td>Tempat/Tanggal Lahir</td>
+                            <td>
+                                <input type="text" name="tempat_lahir" placeholder="Tempat Lahir" style="width:150px;">
+                                /
+                                <select name="tgl">
+                                    <option>1</option><option>2</option><option>3</option>
+                                    <option>4</option><option>5</option><option>6</option>
+                                    <option>7</option><option>8</option><option>9</option>
+                                    <option>10</option><option>11</option><option>12</option>
+                                    <option>13</option><option>14</option><option>15</option>
+                                    <option>16</option><option>17</option><option>18</option>
+                                    <option>19</option><option>20</option><option>21</option>
+                                    <option>22</option><option>23</option><option>24</option>
+                                    <option>25</option><option>26</option><option>27</option>
+                                    <option>28</option><option>29</option><option>30</option>
+                                    <option>31</option>
+                                </select>
+                                -
+                                <select name="bulan">
+                                    <option>Januari</option><option>Februari</option>
+                                    <option>Maret</option><option>April</option>
+                                    <option>Mei</option><option>Juni</option>
+                                    <option>Juli</option><option>Agustus</option>
+                                    <option>September</option><option>Oktober</option>
+                                    <option>November</option><option>Desember</option>
+                                </select>
+                                -
+                                <select name="tahun">
+                                    <option>2005</option><option>2004</option>
+                                    <option>2003</option><option>2002</option>
+                                    <option>2001</option><option>2000</option>
+                                    <option>1999</option><option>1998</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Agama</td>
+                            <td>
+                                <select name="agama">
+                                    <option value="">-PILIH-</option>
+                                    <option>Islam</option>
+                                    <option>Kristen</option>
+                                    <option>Katolik</option>
+                                    <option>Hindu</option>
+                                    <option>Budha</option>
+                                    <option>Konghucu</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>
+                                <label class="radio-inline">
+                                    <input type="radio" name="jenis_kelamin" value="L"> Laki Laki
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" name="jenis_kelamin" value="P"> Perempuan
+                                </label>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>No. Ijazah SMA/MA</td>
+                            <td><input type="text" name="no_ijazah"></td>
+                        </tr>
+                        <tr>
+                            <td>Foto (Ukuran File Maks. 2,00 MB)</td>
+                            <td><input type="file" name="foto" accept="image/*"></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Ayah</td>
+                            <td><input type="text" name="nama_ayah"></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Ibu</td>
+                            <td><input type="text" name="nama_ibu"></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat Rumah</td>
+                            <td><textarea name="alamat_rumah"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>No. Telp</td>
+                            <td><input type="tel" name="no_telp"></td>
+                        </tr>
+                        <tr>
+                            <td>Nama Sekolah Asal</td>
+                            <td><input type="text" name="nama_sekolah"></td>
+                        </tr>
+                        <tr>
+                            <td>Alamat Sekolah Asal</td>
+                            <td><textarea name="alamat_sekolah"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td>Jurusan Dipilih</td>
+                            <td>
+                                <select name="jurusan">
+                                    <option value="">-PILIH-</option>
+                                    <option>Teknik Informatika</option>
+                                    <option>Sistem Informasi</option>
+                                    <option>Manajemen</option>
+                                    <option>Akuntansi</option>
+                                    <option>Ilmu Komunikasi</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tahu informasi ini dari :</td>
+                            <td>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="info[]" value="Koran"> Koran
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="info[]" value="Website"> Website
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="info[]" value="Televisi"> Televisi
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="info[]" value="Radio"> Radio
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="info[]" value="Teman"> Teman
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
 
-            <div class="form-group">
-                <label for="nama">Nama Lengkap :</label>
-                <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
-            </div>
-
-            <div class="form-group">
-                <label for="tempat_lahir">Tempat Lahir :</label>
-                <input type="text" id="tempat_lahir" name="tempat_lahir" placeholder="Contoh: Jakarta">
-            </div>
-
-            <div class="form-group">
-                <label for="tanggal_lahir">Tanggal Lahir :</label>
-                <input type="text" id="tanggal_lahir" name="tanggal_lahir" 
-                       pattern="\d{2}-\d{2}-\d{4}" 
-                       placeholder="DD-MM-YYYY" 
-                       title="Format: DD-MM-YYYY (Tahun 1989-1994)">
-            </div>
-
-            <div class="form-group">
-                <label>Jenis Kelamin :</label>
-                <div class="radio-group">
-                    <label>
-                        <input type="radio" name="jenis_kelamin" value="L" checked> Laki-laki
-                    </label>
-                    <label>
-                        <input type="radio" name="jenis_kelamin" value="P"> Perempuan
-                    </label>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="agama">Agama :</label>
-                <select id="agama" name="agama">
-                    <option value="Islam" selected>Islam</option>
-                    <option value="Kristen">Kristen</option>
-                    <option value="Katolik">Katolik</option>
-                    <option value="Hindu">Hindu</option>
-                    <option value="Budha">Budha</option>
-                    <option value="Konghucu">Konghucu</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="alamat">Alamat :</label>
-                <textarea id="alamat" name="alamat" placeholder="Masukkan alamat lengkap"></textarea>
-            </div>
-
-            <div class="button-group">
-                <input type="submit" value="Kirim">
-                <input type="reset" value="Reset">
-            </div>
-        </form>
-
-        <div class="keterangan">
-            <strong>Keterangan:</strong>
-            <p>• Metode pengiriman: POST</p>
-            <p>• Skrip pemroses: proses.php (tidak perlu dibuat)</p>
-            <p>• Format tanggal lahir: DD-MM-YYYY (Tahun 1989-1994)</p>
+                    <div class="button-group">
+                        <input type="submit" value="DAFTAR">
+                        <input type="reset" value="BATAL">
+                    </div>
+                </fieldset>
+            </form>
         </div>
     </div>
 
     <div id="footer">
-        <i>copyright@faridabdul999 2026</i>
+        <i>copyright@faridganteng 2026</i>
     </div>
 </body>
 </html>
