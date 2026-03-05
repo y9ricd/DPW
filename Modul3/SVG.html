@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Halaman Video</title>
+    <title>Halaman SVG</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -17,18 +17,18 @@
         nav {
             float: left;
             width: 30%;
-            height: 200px;
-            background: #969391;
+            height: 600px;
+            background: #ccc;
             padding: 20px;
         }
         nav ul { list-style-type: none; padding: 0; }
-        nav ul li a { text-decoration: none; color: #000000; }
+        nav ul li a { text-decoration: none; color: #333; }
         article {
             float: left;
-            padding: 10px;
-            width: 60%;
+            padding: 20px;
+            width: 70%;
             background-color: #f1f1f1;
-            min-height: 500px;
+            min-height: 600px;
         }
         section::after { content: ""; display: table; clear: both; }
         footer {
@@ -54,19 +54,26 @@
             </ul>
         </nav>
         <article>
-            <h1>Pemutar Video</h1>
-            <p><strong>Video Lokal:</strong></p>
-            <video width="420" height="315" controls autoplay muted>
-                <source src="gambar/speed.mp4" type="video/mp4">
-                
-            </video>
-            <br><br>
-            <p><strong>Video YouTube:</strong></p>
-            <iframe width="420" height="315"
-                    src="https://www.youtube.com/embed/MoCxlM1CkNw">
-            </iframe>
-            <br><br>
-            <p><strong>Kesimpulan:</strong> Tag video untuk memutar video lokal, iframe untuk embed video YouTube. Autoplay+muted membuat video diputar otomatis tanpa suara.</p>
+            <h1>Ujicoba SVG</h1>
+            <p><strong>Lingkaran:</strong></p>
+            <svg width="100" height="100">
+                <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+            </svg>
+            <p><strong>Persegi Panjang:</strong></p>
+            <svg width="100" height="100">
+                <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+            </svg>
+            <p><strong>Persegi Rounded:</strong></p>
+            <svg width="400" height="180">
+                <rect x="50" y="20" rx="20" ry="20" width="150" height="150"
+                      style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            </svg>
+            <p><strong>Poligon Segitiga:</strong></p>
+            <svg width="300" height="200">
+                <polygon points="150,10 50,190 250,190"
+                         style="fill:green;stroke:black;stroke-width:3" />
+            </svg>
+            <p><strong>Kesimpulan:</strong> SVG adalah grafis berbasis vektor yang tidak pecah saat diperbesar. Mendukung berbagai bentuk seperti circle, rect, dan poligon.</p>
             <p><strong>NIM:</strong> 253307025 | <strong>Nama:</strong> Mohammad Saputra Abdul Farid</p>
         </article>
     </section>

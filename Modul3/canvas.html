@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Halaman Video</title>
+    <title>Halaman Canvas</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -17,18 +17,18 @@
         nav {
             float: left;
             width: 30%;
-            height: 200px;
-            background: #969391;
+            height: 600px;
+            background: #ccc;
             padding: 20px;
         }
         nav ul { list-style-type: none; padding: 0; }
-        nav ul li a { text-decoration: none; color: #000000; }
+        nav ul li a { text-decoration: none; color: #333; }
         article {
             float: left;
-            padding: 10px;
-            width: 60%;
+            padding: 20px;
+            width: 70%;
             background-color: #f1f1f1;
-            min-height: 500px;
+            min-height: 600px;
         }
         section::after { content: ""; display: table; clear: both; }
         footer {
@@ -54,22 +54,14 @@
             </ul>
         </nav>
         <article>
-            <h1>Pemutar Video</h1>
-            <p><strong>Video Lokal:</strong></p>
-            <video width="420" height="315" controls autoplay muted>
-                <source src="gambar/speed.mp4" type="video/mp4">
-                
-            </video>
+            <h1>Ujicoba Canvas</h1>
+            <canvas id="canvas" width="400" height="400" style="background-color:#000000"></canvas>
             <br><br>
-            <p><strong>Video YouTube:</strong></p>
-            <iframe width="420" height="315"
-                    src="https://www.youtube.com/embed/MoCxlM1CkNw">
-            </iframe>
-            <br><br>
-            <p><strong>Kesimpulan:</strong> Tag video untuk memutar video lokal, iframe untuk embed video YouTube. Autoplay+muted membuat video diputar otomatis tanpa suara.</p>
+            <p><strong>Kesimpulan:</strong> Canvas digunakan untuk menggambar grafis secara dinamis menggunakan JavaScript. Berbeda dengan SVG, canvas menggunakan script untuk merender grafis.</p>
             <p><strong>NIM:</strong> 253307025 | <strong>Nama:</strong> Mohammad Saputra Abdul Farid</p>
         </article>
     </section>
     <footer><p>copyright@faridganteng 2026</p></footer>
+<script src="main.js"></script>
 </body>
 </html>
