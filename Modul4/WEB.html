@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Studi Kasus CSS</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        #wrapper {
+            width: 700px;
+            margin: 20px auto;
+            border: 1px solid #999;
+            background-color: #fff;
+        }
+
+        /* HEADER */
+        #header {
+            background-color: blue;
+            color: white;
+            padding: 15px 20px;
+        }
+        #header h1 {
+            font-size: 28px;
+            color: yellow;
+        }
+        #header p {
+            font-size: 13px;
+            color: white;
+        }
+
+        /* MAIN AREA */
+        #main {
+            display: flex;
+        }
+
+        /* LEFT NAV */
+        #nav {
+            width: 180px;
+            border: 2px dashed #555;
+            padding: 10px;
+            flex-shrink: 0;
+        }
+        #nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        #nav ul li {
+            padding: 4px 0;
+        }
+        #nav ul li a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+        }
+        #nav ul li a:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+        /* show default vs hover label */
+        #nav .link-label {
+            font-size: 11px;
+            color: #888;
+            margin-left: 6px;
+        }
+
+        /* DIVIDER */
+        #divider {
+            width: 2px;
+            background-color: #ccc;
+        }
+
+        /* CONTENT */
+        #content {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        #content img {
+            width: 80px;
+            margin-bottom: 8px;
+        }
+        #content h2 {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 4px;
+        }
+        #content h3 {
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 12px;
+        }
+        #content p {
+            color: red;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        /* FOOTER */
+        #footer {
+            background-color: #ddd;
+            text-align: right;
+            padding: 10px 20px;
+            font-size: 13px;
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <h1>CSS</h1>
+            <p>Website CSS</p>
+        </div>
+        <div id="main">
+    <div id="nav">
+                <ul>
+                    <li><a href="#">Menu 1</a></li>
+                    <li><a href="#">Menu 2</a></li>
+                    <li><a href="#">Menu 3</a></li>
+                    <li><a href="#">Menu 4</a></li>
+                    <li><a href="#">Menu 5</a></li>
+                    <li>
+                        <a href="#" style="text-decoration:underline; font-weight:bold;">Menu 6</a>
+                        <span class="link-label"></span>
+                    </li>
+                    <li><span class="link-label" style="margin-left:20px;"></span></li>
+                </ul>
+            </div>
+            <div id="divider"></div>
+            <div id="content">
+                <img src="https://upload.wikimedia.org/wikipedia/id/5/5f/Politeknik_Negeri_Madiun.png" alt="Logo PNM">
+                <h2>TI</h2>
+                <h3>Politeknik Negeri Madiun</h3>
+                <p>Mewujudkan pendidikan tinggi vokasi dalam bidang<br>
+                Teknologi Informasi dan penerapannya yang berkualitas,<br>
+                inovatif dan berdaya saing Nasional.</p>
+            </div>
+        </div>
+        <div id="footer">
+            Mohammad Saputra Abdul Farid| 253307025 | TI-2A
+        </div>
+
+    </div>
+</body>
+</html>
