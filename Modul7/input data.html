@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Input Data</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 400px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        button { background-color: #061b31; color: white; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: #092038; }
+        p.hasil { margin-top: 12px; padding: 8px 12px; background-color: #eaf3fb; border-left: 4px solid #4a90d9; font-size: 14px; display: none; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>2. Program Input Data</h2>
+        <button onclick="programInputData()">Masukkan Nama</button>
+        <p class="hasil" id="hasil-input"></p>
+        <br>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        function programInputData() {
+            var nama = prompt("Siapa nama Anda?");
+            if (nama !== null && nama.trim() !== "") {
+                var el = document.getElementById("hasil-input");
+                el.textContent = "Hai, " + nama + "!";
+                el.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

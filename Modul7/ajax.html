@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Penjelasan AJAX dan jQuery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 700px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        .teori { background-color: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; padding: 14px; font-size: 14px; line-height: 1.7; color: #444; }
+        .teori h3 { margin-top: 14px; margin-bottom: 6px; font-size: 14px; color: #222; }
+        pre { background-color: #f0f0f0; border: 1px solid #ccc; padding: 10px 14px; border-radius: 4px; font-size: 13px; overflow-x: auto; }
+        button { background-color: #061b31; color: white; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 14px; margin-bottom: 10px; }
+        button:hover { background-color: #092038; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>8. Penjelasan AJAX dan jQuery</h2>
+        <div class="teori">
+
+            <h3>Apa itu AJAX?</h3>
+            <p>
+                <b>AJAX</b> (Asynchronous JavaScript and XML) adalah cara mengirim dan menerima
+                data dari server tanpa perlu me-reload halaman. Contoh: memuat komentar baru,
+                mengirim form, atau mengambil data dari database secara langsung.
+            </p>
+
+            <h3>Apa itu jQuery?</h3>
+            <p>
+                <b>jQuery</b> adalah library JavaScript yang memudahkan manipulasi elemen HTML,
+                menangani event, membuat animasi, dan menggunakan AJAX dengan kode yang lebih singkat.
+            </p>
+
+            <h3>Cara Menyertakan jQuery</h3>
+            <pre>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"&gt;&lt;/script&gt;</pre>
+
+            <h3>Contoh Penggunaan jQuery Sederhana</h3>
+            <pre>// Sembunyikan / tampilkan elemen saat tombol diklik
+$("#tombol").click(function() {
+    $("#kotak").slideToggle("slow");
+});</pre>
+
+            <p><b>Contoh:</b></p>
+            <button id="btn-toggle">Tampilkan / Sembunyikan</button>
+            <div id="kotak-demo" style="padding:10px; background:#eaf3fb; border:1px solid #bbb; border-radius:4px; font-size:14px;">
+                Halo! Saya bisa disembunyikan dengan jQuery.
+            </div>
+        </div>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        $(function() {
+            $("#btn-toggle").click(function() {
+                $("#kotak-demo").slideToggle("slow");
+            });
+        });
+    </script>
+</body>
+</html>

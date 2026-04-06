@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Radio Box</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 400px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        input[type="text"] { padding: 7px 10px; border: 1px solid #bbb; border-radius: 4px; font-size: 14px; width: 220px; }
+        .radio-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 12px; }
+        .radio-wrap label { padding: 6px 14px; border: 1px solid #bbb; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        .radio-wrap label:hover { border-color: #4a90d9; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>5. Program Radio Box</h2>
+        <p>Klik pada musik yang paling Anda sukai:</p>
+        <form name="formTes" method="GET">
+            <div class="radio-wrap">
+                <label><input type="radio" name="radioMusik" value="Jazz"    onclick="info()"> Jazz</label>
+                <label><input type="radio" name="radioMusik" value="RnB"     onclick="info()"> RnB</label>
+                <label><input type="radio" name="radioMusik" value="Hipdut"  onclick="info()"> Hipdut</label>
+                <label><input type="radio" name="radioMusik" value="Lainnya" onclick="info()"> Lainnya</label>
+            </div>
+            Info: <input type="text" name="fieldMusik" size="30" readonly />
+        </form>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        function info() {
+            for (var i = 0; i < 4; i++) {
+                if (document.formTes.radioMusik[i].checked) {
+                    document.formTes.fieldMusik.value = document.formTes.radioMusik[i].value;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

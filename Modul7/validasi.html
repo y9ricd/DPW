@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Program Validasi Isian</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 400px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        button { background-color: #061b31; color: white; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: #092038; }
+        input[type="text"] { padding: 7px 10px; border: 1px solid #bbb; border-radius: 4px; font-size: 14px; width: 220px; }
+        label { font-size: 14px; }
+        p.hasil { margin-top: 12px; padding: 8px 12px; background-color: #eaf3fb; border-left: 4px solid #4a90d9; font-size: 14px; display: none; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>4. Program Validasi Isian</h2>
+        <form name="formku" onsubmit="return false;">
+            Nama : <input type="text" name="nama" />
+            <br/><br/>
+            <button type="button" onclick="cekNama(this.form)">Kirim</button>
+        </form>
+        <p class="hasil" id="hasil-validasi"></p>
+        <br>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        function cekNama(form) {
+            if (form.elements[0].value == "") {
+                alert("Nama harus dimasukkan");
+                form.nama.focus();
+                form.nama.select();
+                return false;
+            }
+            var el = document.getElementById("hasil-validasi");
+            el.textContent = "Terima kasih, " + form.elements[0].value + "!";
+            el.style.display = "block";
+            return true;
+        }
+    </script>
+</body>
+</html>

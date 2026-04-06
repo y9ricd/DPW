@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tampilan Tanggal dan Jam Real-Time</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 400px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        #tampil-jam { font-size: 36px; font-weight: bold; color: #e40000; letter-spacing: 3px; }
+        #tampil-tanggal { font-size: 14px; color: #555; margin-top: 4px; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>7. Tampilan Tanggal dan Jam Real-Time</h2>
+        <div id="tampil-jam">--:--:--</div>
+        <div id="tampil-tanggal">Memuat...</div>
+        <br>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        function updateJam() {
+            var now = new Date();
+            var hh = String(now.getHours()).padStart(2, "0");
+            var mm = String(now.getMinutes()).padStart(2, "0");
+            var ss = String(now.getSeconds()).padStart(2, "0");
+            document.getElementById("tampil-jam").textContent = hh + ":" + mm + ":" + ss;
+
+            var hari = ["Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"];
+            var bln  = ["Januari","Februari","Maret","April","Mei","Juni",
+                        "Juli","Agustus","September","Oktober","November","Desember"];
+            var tgl  = hari[now.getDay()] + ", " + now.getDate() + " " +
+                       bln[now.getMonth()] + " " + now.getFullYear();
+            document.getElementById("tampil-tanggal").textContent = tgl;
+        }
+        setInterval(updateJam, 1000);
+        updateJam();
+    </script>
+</body>
+</html>

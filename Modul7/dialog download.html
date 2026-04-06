@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Download Dialog dengan Progress Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f2f2f2; padding: 30px; }
+        .box { background: white; padding: 25px; border-radius: 6px; max-width: 400px; margin: auto; border: 1px solid #ccc; }
+        h2 { color: #041eb3; border-bottom: 2px solid #041eb3; padding-bottom: 6px; }
+        button { background-color: #061b31; color: white; border: none; padding: 8px 18px; border-radius: 4px; cursor: pointer; font-size: 14px; }
+        button:hover { background-color: #092038; }
+        #kotak-progress { background-color: #ddd; border-radius: 4px; height: 22px; width: 100%; max-width: 360px; margin-top: 12px; overflow: hidden; }
+        #isi-progress { height: 100%; width: 0%; background-color: #4a90d9; transition: width 0.3s; text-align: center; color: white; font-size: 13px; line-height: 22px; }
+        #status-dl { font-size: 13px; color: #555; margin-top: 6px; }
+        a { display: inline-block; margin-top: 15px; font-size: 13px; color: #041eb3; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h2>11. Download Dialog dengan Progress Bar</h2>
+        <button id="btn-download">Mulai Download</button>
+
+        <div id="download-dialog" title="Mengunduh File..." style="display:none;">
+            <p id="status-dl">Mempersiapkan unduhan...</p>
+            <div id="kotak-progress">
+                <div id="isi-progress">0%</div>
+            </div>
+        </div>
+
+        <br>
+        <a href="index.html">← Kembali ke Index</a>
+    </div>
+
+    <script>
+        $(function() {
+            var timerDl;
+
+            $("#download-dialog").dialog({
+                autoOpen: false,
+                modal: true,
+                width: 400,
+                closeOnEscape: false,
+                open: function() {
+                    var persen = 0;
+                    $("#isi-progress").css("width", "0%").text("0%");
+                    $("#status-dl").text("Mempersiapkan unduhan...");
+
+                    timerDl = setInterval(function() {
+                        persen += Math.floor(Math.random() * 8) + 3;
+                        if (persen >= 100) {
+                            persen = 100;
+                            clearInterval(timerDl);
+                            $("#status-dl").text("Unduhan selesai!");
+                            setTimeout(function() {
+                                $("#download-dialog").dialog("close");
+                            }, 1200);
+                        }
+                        $("#isi-progress").css("width", persen + "%").text(persen + "%");
+                        if (persen < 40)       $("#status-dl").text("Menghubungi server...");
+                        else if (persen < 80)  $("#status-dl").text("Mengunduh data...");
+                        else if (persen < 100) $("#status-dl").text("Hampir selesai...");
+                    }, 300);
+                },
+                beforeClose: function() {
+                    clearInterval(timerDl);
+                }
+            });
+
+            $("#btn-download").click(function() {
+                $("#download-dialog").dialog("open");
+            });
+        });
+    </script>
+</body>
+</html>
